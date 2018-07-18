@@ -1,0 +1,13 @@
+.navigation {
+  &__checkbox-services {}
+  &__checkbox-services:checked~.name-div {
+    color: $primary-color-services;
+  }
+  &__checkbox-services:checked~.services {
+    z-index: 7000;
+    top: 10%;
+    left: 9%;
+    width: 80%;
+    height: 80%;
+  }
+}
