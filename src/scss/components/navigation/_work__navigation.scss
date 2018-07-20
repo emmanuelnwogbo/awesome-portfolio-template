@@ -16,4 +16,7 @@
     width: 70%;
     height: 70%;
   }
+  &__checkbox-services:checked~.menu>.menu__list>.menu__list-item>.menu__item {
+    color: $primary-color-services;
+  }
 }

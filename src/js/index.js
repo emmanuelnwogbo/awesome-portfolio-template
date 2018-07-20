@@ -1,55 +1,56 @@
 import '../scss/main.scss';
-const aboutCheck = document.getElementById('navigation__checkbox-about');
-const servicesCheck = document.getElementById('navigation__checkbox-services');
-const workCheck = document.getElementById('navigation__checkbox-work');
-const aboutBtn = document.getElementById('about-btn');
-const servicesBtn = document.getElementById('services-btn');
-const workBtn = document.getElementById('work-btn');
-const nameDiv = document.getElementById('name-div');
+const aboutCheck = document.getElementById('about'),
+  servicesCheck = document.getElementById('services'),
+  workCheck = document.getElementById('work'),
+  clientCheck = document.getElementById('clients'),
+  blogCheck = document.getElementById('blog'),
+  contactCheck = document.getElementById('contact'),
+  aboutBtn = document.getElementById('about-btn'),
+  servicesBtn = document.getElementById('services-btn'),
+  workBtn = document.getElementById('work-btn'),
+  clientBtn = document.getElementById('client-btn'),
+  blogBtn = document.getElementById('blog-btn'),
+  contactBtn = document.getElementById('contact-btn'),
+  nameDiv = document.getElementById('name-div'),
+
+  btns = [
+    aboutBtn,
+    servicesBtn,
+    workBtn,
+    clientBtn,
+    blogBtn,
+    contactBtn
+  ],
+
+  checkInputs = [
+    aboutCheck,
+    servicesCheck,
+    workCheck,
+    clientCheck,
+    blogCheck,
+    contactCheck
+  ];
+
+btns.forEach(btn => {
+  btn.addEventListener('click', function (e) {
+    e.preventDefault();
+    let link = this.childNodes,
+      name = link[1].innerHTML;
+    checkInputs.forEach(checkInput => {
+      if (checkInput.id === name && !checkInput.checked) {
+        checkInputs.forEach(checkInput => {
+          if (checkInput.id !== name && checkInput.checked) {
+            checkInput.checked = false;
+          }
+        })
+        checkInput.checked = true
+      }
+    })
+  })
+});
 
 nameDiv.addEventListener('click', function () {
-  if (aboutCheck.checked || servicesCheck.checked || workCheck.checked) {
-    aboutCheck.checked = false;
-    servicesCheck.checked = false;
-    workCheck.checked = false;
-  }
+  checkInputs.forEach(checkInput => {
+    checkInput.checked = false;
+  })
 });
-
-aboutBtn.addEventListener('click', function (e) {
-  e.preventDefault();
-
-  if (servicesCheck.checked || workCheck.checked) {
-    servicesCheck.checked = false;
-    workCheck.checked = false;
-  }
-
-  if (!aboutCheck.checked) {
-    aboutCheck.checked = true;
-  }
-});
-
-servicesBtn.addEventListener('click', function (e) {
-  e.preventDefault();
-
-  if (aboutCheck.checked || workCheck.checked) {
-    aboutCheck.checked = false;
-    workCheck.checked = false;
-  }
-
-  if (!servicesCheck.checked) {
-    servicesCheck.checked = true;
-  }
-});
-
-workBtn.addEventListener('click', function (e) {
-  e.preventDefault();
-
-  if (aboutCheck.checked || servicesCheck.checked) {
-    aboutCheck.checked = false;
-    servicesCheck.checked = false;
-  }
-
-  if (!workCheck.checked) {
-    workCheck.checked = true;
-  }
-})

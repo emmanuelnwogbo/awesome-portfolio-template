@@ -4,9 +4,12 @@ $primary-whitish: #D1C4E9;
 $primary-color-about: #7D3C98;
 $primary-color-services: #CC00CC;
 $primary-color-education: #85C1E9;
-$primary-color-work: #CE93D8;
-$primary-color-client: #FF0033;
+$primary-color-work: #9C27B0;
+$primary-color-client: #17202A;
+$primary-color-client1: #C2185B;
+$primary-color-client2: #6666FF;
 $primary-color-blog: #85929E;
+$primary-color-blog-item: #D7DC06;
 $primary-color-contact: #9999FF;
 $font-primary: 'Nunito',
 sans-serif;
@@ -21,6 +24,7 @@ $blue: blue;
   margin: 0;
   padding: 0;
   box-sizing: inherit;
+  backface-visibility: hidden;
 }
 
 html {

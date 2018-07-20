@@ -13,6 +13,9 @@
     cursor: pointer;
     transform: translateY(-.3rem) scale(1.1);
   }
+  &:hover>.name__div-label::before {
+    transform: scale(.7) skewX(50deg);
+  }
   &:hover>.name__div-label::after {
     transform: scale(.7) skewX(-50deg);
   }
@@ -22,6 +25,18 @@
   height: 100%;
   width: 100%;
   position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 15%;
+    right: 0;
+    width: 0%;
+    height: 0%;
+    z-index: -1;
+    background: linear-gradient(to right bottom, rgba($primary-color-work, 0.9), rgba($primary-color-education, 1));
+    transform: skewX(-50deg);
+    transition: all .6s ease-in;
+  }
   &::after {
     content: '';
     position: absolute;

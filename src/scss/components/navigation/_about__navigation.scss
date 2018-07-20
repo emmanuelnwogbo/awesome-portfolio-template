@@ -1,4 +1,9 @@
 .navigation {
+  &__checkbox {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+  }
   &__checkbox-about {}
   &__checkbox-about:checked~.half__one {
     grid-column: col-start 20 / col-end 40;
